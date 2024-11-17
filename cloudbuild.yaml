@@ -16,9 +16,8 @@ steps:
     args:
       - builds
       - submit
-      - -t
-      - ${_IMAGE}
-      - ./
+      - --config
+      - cloudbuild.yaml
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       - run
@@ -37,7 +36,7 @@ substitutions:
   _IMAGE: us-central1-docker.pkg.dev/portfolio-441309/my-remix-app/my-remix-app-image
   _SERVICE: my-remix-app-image
   _REGION: us-central1
-  _VITE_APP_TITLE: asia-northeast1
+  _VITE_APP_TITLE: this is my remix app
 
 # REF: https://stackoverflow.com/questions/68779751/error-publishing-source-code-from-cloud-build-to-a-bucket-using-triggers
 options:
