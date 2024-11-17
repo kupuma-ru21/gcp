@@ -8,15 +8,11 @@ ARG VITE_APP_TITLE
 
 ENV VITE_APP_TITLE=${VITE_APP_TITLE}
 
-RUN echo "VITE_APP_TITLE=$VITE_APP_TITLE"
-
-
 RUN corepack enable
 COPY . /app
 WORKDIR /app
 
 FROM base AS prod-deps
-RUN echo "HERE"
 RUN pnpm install --prod
 
 FROM base AS build
