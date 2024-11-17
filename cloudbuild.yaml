@@ -7,7 +7,7 @@ steps:
     args:
       - build
       - --build-arg
-      - VITE_APP_TITLE=this-is-my-remix-app
+      - VITE_APP_TITLE=my-remix-app
       - -t
       - ${_IMAGE}
       - .
