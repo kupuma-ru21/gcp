@@ -12,12 +12,10 @@ steps:
       - ${_IMAGE}
       - .
     automapSubstitutions: true
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - builds
-      - submit
-      - --config
-      - cloudbuild.yaml
+      - push
+      - "${__IMAGE}"
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       - run
