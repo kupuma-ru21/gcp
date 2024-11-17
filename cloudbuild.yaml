@@ -7,7 +7,7 @@ steps:
     args:
       - build
       - --build-arg
-      - VITE_APP_TITLE=my-remix-app
+      - VITE_APP_TITLE=MyRemixApp
       - -t
       - ${_IMAGE}
       - .
@@ -19,7 +19,6 @@ steps:
       - -t
       - ${_IMAGE}
       - ./
-    automapSubstitutions: true
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       - run
