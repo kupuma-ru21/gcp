@@ -30,3 +30,7 @@ substitutions:
   _IMAGE: us-central1-docker.pkg.dev/portfolio-441309/my-remix-app/my-remix-app-image
   _SERVICE: my-remix-app-image
   _REGION: us-central1
+
+# REF: https://stackoverflow.com/questions/68779751/error-publishing-source-code-from-cloud-build-to-a-bucket-using-triggers
+options:
+  logging: CLOUD_LOGGING_ONLY
