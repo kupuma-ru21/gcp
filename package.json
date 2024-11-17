@@ -8,7 +8,9 @@
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "docker:build": "docker build --build-arg VITE_APP_TITLE='this is test env' -t my-remix-app . && docker run -p 3000:3000 my-remix-app",
+    "deploy": "gcloud builds submit --config cloudbuild.yaml"
   },
   "dependencies": {
     "@remix-run/node": "^2.14.0",
