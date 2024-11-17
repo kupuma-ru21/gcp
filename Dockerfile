@@ -4,9 +4,9 @@
 
 FROM node:20-slim AS base
 
-ARG VITE_APP_TITLE
+# ARG VITE_APP_TITLE
 
-ENV VITE_APP_TITLE=${VITE_APP_TITLE}
+ENV VITE_APP_TITLE="My App"
 
 RUN corepack enable
 COPY . /app
