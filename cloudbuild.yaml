@@ -1,17 +1,23 @@
 # REF: https://cloud.google.com/build/docs/deploy-containerized-application-cloud-run
 # REF: https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values#using_user-defined_substitutions
 # REF: https://zenn.dev/jy8752/articles/351fc5d8c53029
-# REF: https://cloud.google.com/build/docs/automating-builds/github/connect-repo-github
+# REF: https://cloud.google.com/workflows/docs/deploy-workflows-using-cloud-build
 steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       - build
       - --build-arg
-      - VITE_APP_TITLE=this is test env
+      - VITE_APP_TITLE=Hey this ie env
       - -t
       - ${_IMAGE}
       - .
     automapSubstitutions: true
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "us-central1-docker.pkg.dev/portfolio-441309/my-remix-app/my-remix-app-image",
+      ]
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       - run
