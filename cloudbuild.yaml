@@ -8,7 +8,7 @@ steps:
     args:
       - build
       - --build-arg
-      - VITE_APP_TITLE=Hey this ie env
+      - VITE_APP_TITLE=${_VITE_APP_TITLE}
       - -t
       - ${_IMAGE}
       - .
@@ -37,5 +37,6 @@ substitutions:
   _IMAGE: us-central1-docker.pkg.dev/portfolio-441309/my-remix-app/my-remix-app-image
   _SERVICE: my-remix-app-image
   _REGION: us-central1
+  _VITE_APP_TITLE: this this is ?
 options:
   logging: CLOUD_LOGGING_ONLY
