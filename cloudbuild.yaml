@@ -11,7 +11,7 @@ steps:
       - VITE_APP_TITLE=${_VITE_APP_TITLE}
       - -t
       - ${_IMAGE}
-      - ./app
+      - ./client
     automapSubstitutions: true
   - name: "gcr.io/cloud-builders/docker"
     args:
