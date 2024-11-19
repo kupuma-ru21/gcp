@@ -37,6 +37,6 @@ substitutions:
   _IMAGE: us-central1-docker.pkg.dev/portfolio-441309/my-remix-app/my-remix-app-image
   _SERVICE: my-remix-app-image
   _REGION: us-central1
-  _VITE_APP_TITLE: this this is ?
+  _VITE_APP_TITLE: ha ha ha
 options:
   logging: CLOUD_LOGGING_ONLY
